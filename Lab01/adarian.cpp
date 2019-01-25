@@ -6,6 +6,7 @@ using namespace std;
   
 
 void insertionSort(int *seq, int size) {
+  int counter = 2;
   for (int j = 1; j < size; j++) {
     int key = seq[j], i = j - 1;
     while (i >= 0 && seq[i] > key) {
@@ -13,10 +14,11 @@ void insertionSort(int *seq, int size) {
       i--;
     }  
     seq[i + 1] = key;
-  }
-  
-  for (int x = 0; x < size; x++) {
-    cout << seq[x] << ";";
+    for (int x = 0; x < counter; x++) {
+      cout << seq[x] << ";";
+    }
+    counter++;
+    cout << endl;
   }
 }
 
