@@ -15,7 +15,7 @@ int main(int argc,char **argv) {
   Sequence = new int[arraySize];
     
   // Read the sequence
-  for(int i=0; i<arraySize; i++)
+  for(int i = 0; i < arraySize; i++)
     cin >> Sequence[i];
    
   // Initializing the max and min numbers
@@ -23,8 +23,7 @@ int main(int argc,char **argv) {
   int min_num = Sequence[0];
 
   // Updating the max and min numbers
-  for(int i=1; i<arraySize; i++)
-  {
+  for (int i = 1; i < arraySize; i++) {
     if (Sequence[i] > max_num)
       max_num = Sequence[i];
     if (Sequence[i] < min_num)
