@@ -3,24 +3,6 @@
 #define MAX_INT 2147483647
 
 using namespace std;
-  
-
-void insertionSort(int *seq, int size) {
-  int counter = 2;
-  for (int j = 1; j < size; j++) {
-    int key = seq[j], i = j - 1;
-    while (i >= 0 && seq[i] > key) {
-      seq[i + 1] = seq[i];
-      i--;
-    }  
-    seq[i + 1] = key;
-    for (int x = 0; x < counter; x++) {
-      cout << seq[x] << ";";
-    }
-    counter++;
-    cout << endl;
-  }
-}
 
 int main(int argc, char **argv) {
 
@@ -35,7 +17,24 @@ int main(int argc, char **argv) {
   for(int i=0; i<arraySize; i++)
     cin >> Sequence[i];
 
-  insertionSort(Sequence, arraySize);
+  auto result = [Sequence, arraySize]() {
+    int counter = 2;
+    for (int j = 1; j < arraySize; j++) {
+      int key = Sequence[j], i = j - 1;
+      while (i >= 0 && Sequence[i] > key) {
+        Sequence[i + 1] = Sequence[i];
+        i--;
+      }  
+      Sequence[i + 1] = key;
+      for (int x = 0; x < counter; x++) {
+        cout << Sequence[x] << ";";
+      }
+      counter++;
+      cout << endl;
+    }
+  };
+
+  result();
 
   // Free allocated space
   delete[] Sequence;
