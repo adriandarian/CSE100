@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
   for(int i=0; i<arraySize; i++)
     cin >> Sequence[i];
 
-  auto result = [Sequence, arraySize]() {
+  auto result = [&]() {
     int counter = 2;
     for (int j = 1; j < arraySize; j++) {
       int key = Sequence[j], i = j - 1;
