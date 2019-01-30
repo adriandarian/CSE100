@@ -17,6 +17,7 @@ int main(int argc, char **argv) {
   for(int i=0; i<arraySize; i++)
     cin >> Sequence[i];
 
+  // insertion sort as a lambda function
   auto result = [&]() {
     int counter = 2;
     for (int j = 1; j < arraySize; j++) {
@@ -38,5 +39,4 @@ int main(int argc, char **argv) {
 
   // Free allocated space
   delete[] Sequence;
-
 }

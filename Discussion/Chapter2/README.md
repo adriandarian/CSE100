@@ -27,7 +27,7 @@ You're expected to work on the problems before coming to the lab. Discussion ses
   <br>
 5. [ _basic_ ] Suppose the input sequence is already sorted. For this specific input, what is the running time of Insertion Sort and Merge Sort? Assume that they are implemented as in the textbook.
   <br>
-6. [ _basic_ ] Briefly explain the computational model, RAM (Random Access Model).
+6. [ _basic_ ] Briefly explain the computational model, RAM (Random Access Model.
   <br>
 7. [ _intermediate_ ] Consider the pseudocode of $Merge(A, p, q, r)$ in the textbook. Given that $A[p...q]$ and $A[q + 1...r]$ are both sorted, the function call merges the two sorted subarrays into a sorted subarray $A[p...r]$. Prove the correctness of Merge. For simplicity, you can assume that $L[1...n_{1}] = A[p...q]$ and $R[1...n_{2}] = A[q + 1...r]$., and $L[n_{1} + 1] = R[n_{2} + 1] = \infty$. (So you only need to consider from lines 10). You can assume that all elements stored in the array have distinct values.
   <br>

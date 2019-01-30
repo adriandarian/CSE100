@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+
+  \usepackage{fullpage} % Package to use full page
+  \usepackage{parskip} % Package to tweak paragraph skipping
+  \usepackage{tikz} % Package for drawing
+  \usepackage{amsmath}
+  \usepackage{amsfonts}
+  \usepackage{amssymb}
+  \usepackage{hyperref}
+  \usepackage[utf8]{inputenc}
+  \usepackage[english]{babel}
+  \usepackage{multicol}
+  \usepackage{mathtools}
+  \usepackage{listings}
+  
+  \newcommand\tab[1][0.5cm]{\hspace*{#1}}
+  \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+  \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+  
+  \title{Discussion Chapter 2}
+  \author{Adrian Darian}
+  \date{2019/1/28}
+  
+  \begin{document}
+  
+  \maketitle
+
+  \begin{itemize}
+    \item[1] Run Insertion Sort on input array $A = <5, 8, 4, 2, 3, 1>$, show how the array looks before each iteration of the for loop in line 1; see page $18$ for the pseudocode. \\
+    \tab $5;8;$ \\
+    \tab $4;5;8;$ \\
+    \tab $2;4;5;8;$ \\
+    \tab $2;3;4;5;8;$ \\
+    \tab $1;2;3;4;5;8;$ 
+    \item[2] Show the operation of Merge Sort on the array $A = <7, 4, 2, 8, 3, 1, 5, 6, 9>$ as shown in Fig. 2.4.
+    \tab 
+    \item[3] The following is a pseudocode of Selection Sort. Describe Selection Sort in plain English. \\
+    \begin{lstlisting}[language=c++]
+      Selection-Sort(A) 
+      1. n = A.length 
+      2. for j = 1 to n-1 
+      3.   smallest = j 
+      4.     for i = j+1 to n 
+      5.       if A[i] < A[smallest] 
+      6.         smallest = i 
+      7.     exchange A[j] with A[smallest] 
+    \end{lstlisting}
+    State the loop invariant and prove that the algorithm is correct. What is the running time?
+    \item[4] Suppose there are $2^n$ inputs to a certain problem. The running time of algorithm $A$ is exactly $2^n$ for exactly one of the inputs, and $1$ for any other input. Then, the running time is $O(1)$ since $2^n * \frac{1}{2^n} + 1 * (1 - \frac{1}{2^n}) \leq 2$. Is this statement correct?
+    \item[5] Suppose the input sequence is already sorted. For this specific input, what is the running time of Insertion Sort and Merge Sort? Assume that they are implemented as in the textbook.
+    \item[6] Briefly explain the computational model, RAM (Random Access Model).
+    \item[7] Consider the pseudocode of $Merge(A, p, q, r)$ in the textbook. Given that $A[p...q]$ and $A[q + 1...r]$ are both sorted, the function call merges the two sorted subarrays into a sorted subarray $A[p...r]$. Prove the correctness of Merge. For simplicity, you can assume that $L[1...n_{1}] = A[p...q]$ and $R[1...n_{2}] = A[q + 1...r]$., and $L[n_{1} + 1] = R[n_{2} + 1] = \infty$. (So you only need to consider from lines 10). You can assume that all elements stored in the array have distinct values.
+    \item[8] Consider the searching problem: The input is an array $A[1...n]$ of $n$ numbers and a value $v$. You're asked to find an index $i$ such that $A[i] = v$. If there's no such index, return NIL. The following is a pseudocode of linear search, which scans through the sequence, looking for $v$. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties. What is the asymptotic worst case running time?
+    \begin{lstlisting}[language=c++]
+      1. For i = 1 to n
+      2.   If A[i] == v then return i
+      3. return NIL
+    \end{lstlisting}
+    \item[9] You're given an array $A[1...n]$ of $n$ numbers, and would like to know if the array includes two equal numbers. Describe an algorithm that does this job for you. The running time must be $O(nlogn)$.
+    \item[10] We're given three sorted arrays $A[1...x], B[1...y], C[1...z]$. Describe an algorithm that merges the given three sorted (in increasing order) arrays into one (sorted array). What is the running time?
+    \item[11] Merge sort is always faster than insertion sort. True or false? Justify your answer.
+    \item[12] Observe that if the sequence $A$ is sorted, we can check the midpoint of the sequence against $v$ (the element we're looking for) and eliminate half of the sequence from further consideration. The binary search algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write a recursive pseudocode for binary search. Argue that the worst-case running time of binary search is $O(logn)$.
+    \item[13] Can you use binary search to improve the running time of insertion sort to $O(nlogn)$?
+  \end{itemize}
+
+ 
+
+  
+  \end{document}
