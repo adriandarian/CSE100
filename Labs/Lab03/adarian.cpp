@@ -3,21 +3,6 @@
 #define MAX_INT 2147483647
 
 using namespace std;
-  
-int maxCrossingSubarray(int* seq, int low, int mid, int high) {
-  int leftSum = -MAX_INT, rightSum = -MAX_INT;
-  for (int i = mid, sum = 0; i >= low; i--) {
-    sum = sum + seq[i];
-    if (sum > leftSum)
-      leftSum = sum;
-  }
-  for (int j = mid + 1, sum = 0; j <= high; j++) {
-    sum = sum + seq[j];
-    if (sum > rightSum)
-      rightSum = sum;
-  }
-  return leftSum + rightSum;
-}
 
 int maxSubarray(int* seq, int low, int high) {
   if (high == low) {

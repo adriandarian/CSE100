@@ -11,11 +11,12 @@
 
 ## Input Structure
 
-> The input starts with an integer number n, which indeicates the array size. Then, the integers, $A[1], A[2], ..., A[n],$ follow, one per line.
+> The input starts with an integer number n, which indicates the array size. Then, the integers, $A[1], A[2], ..., A[n],$ follow, one per line.
 
 ## Output Structure
 
 > Output the sum of integers in the max subarray, i.e., $A[i^*] + A[i^* + 1] + ...+ A[j^*]$.
+> 
 ## Examples of input and output:
 
 ### Input
