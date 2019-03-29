@@ -21,7 +21,7 @@
 
 ### _Input_
 
-```
+```c++
 6
 15
 13
@@ -33,8 +33,6 @@
 
 ### _Output_
 
-```
-16;11;
-```
+`16;11;`
 
 See the lab guidelines for submission/grading, etc., which can be found at [The root of the Repo](https://github.com/adriandarian/CSE100)

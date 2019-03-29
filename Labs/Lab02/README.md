@@ -21,7 +21,7 @@
 
 ### _Input_
 
-```
+```c++
 6
 5
 3
@@ -33,9 +33,7 @@
 
 #### _Output_
 
-```
-1;2;3;4;5;6;
-```
+`1;2;3;4;5;6;`
 
 > Note that the output has only one line and has no white characters.
 

@@ -16,12 +16,12 @@
 ## Output Structure
 
 > Output the sum of integers in the max subarray, i.e., $A[i^*] + A[i^* + 1] + ...+ A[j^*]$.
-> 
-## Examples of input and output:
+
+## Examples of input and output
 
 ### Input
 
-```
+```c++
 6
 -3
 11

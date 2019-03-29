@@ -17,11 +17,11 @@
 
 > Output the elements in non-decreasing order. Each element must be followed by ;.
 
-## Examples of input and output:
+## Examples of input and output
 
 ### Input
 
-```
+```c++
 6
 5
 3
