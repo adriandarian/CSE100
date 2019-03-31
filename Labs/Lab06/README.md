@@ -1,90 +1,77 @@
-| CSE100 Algorithm Design and Analysis | Lab 05, Spring 2019 |
+| CSE100 Algorithm Design and Analysis | Lab 06, Spring 2019 |
 | -- | -- |
 
 ---
 
-# RadixSort
-
-## Description| CSE100 Algorithm Design and Analysis | Lab 05, Spring 2019 |
-| -- | -- |
-
----
-
-# RadixSort
+# Hash Table with Chaining
 
 ## Description
 
-> In this assignment you will implement RadixSort. See the textbook for the pseudocode. 
+In this assignment you are requested to implement a hash table that handles collisions by chaining. You have to use linked lists, either from the Standard Template Library (STL) (recommended) or by implementing your own. For usage of STL, refer for instance to http://www.cppreference.com/wiki
 
-## Input Structure
+You need to implement the insert, search and delete operations. The keys are integers (C++ int type) and you can assume that all keys are non-negative. The first number in the input will be the size $m$ of the chained hash table. You will use the simple hash function $h(k) = k mod m$. Then lines will follow starting with `i`, `s`, `d`, `o`, or `e`. The details are as follows:
 
-> You are going to apply RadixSort to sort vectors. The input starts with an integer number which indicates the number of vectors to be sorted. Then vectors follow, one vector per line. Each vector consists of 10 numbers where each number has a value in $\{0, 1, 2, 3\}$. Entries of a vector are separated by a space.
-
-## Output Structure
-
-> Output the sorted sequence of vectors, one per line. Vector $i$ must appear before vector $j$ in your output if and only if for some $d \in \{1, 2, \dots, 10\}$, vector $i$ is smaller than or equal to vector $j$ of the $d$th entry, and the two vectors are equal for any of the first $d - 1$ entries.
-
-## Examples of input and output
-
-### Input
++ Use the hash function $h(k) = k mod m$.
++ `i`(key): Insert (key) into the table. For example, `i2` implies `Insert key 2 into table`. For collisions, insert the colliding key at the beginning of the linked list. You just need to insert the key and don't have to output anything in this case.
++ `d`(key): Delete (key) from the table. For example, `d2` implies `Delete key 2 from the table`. If there are multiple elements of the same key value, delete the element of the key value that appears the earliest in the list. If the delete was successful, you have to output
 
 ```c++
-5
-3 3 3 3 3 2 2 2 2 2
-2 3 2 2 2 2 2 2 2 2
-1 3 0 0 2 1 0 0 0 0
-1 3 0 0 2 2 0 0 0 0
-2 3 2 1 2 2 2 2 2 2
+(key):DELETED;
 ```
 
-### Output
+If not (since there was no element with the key value), output
 
 ```c++
-1;3;0;0;2;1;0;0;0;0;
-1;3;0;0;2;2;0;0;0;0;
-2;3;2;1;2;2;2;2;2;2;
-2;3;2;2;2;2;2;2;2;2;
-3;3;3;3;3;2;2;2;2;2;
+(key):DELETE_FAILED;
 ```
 
-> More precisely, this output example has `6` lines since a `cout << endl;` call was made at the end of each of the first 5 lines; those are the only white characters;.
-
-See the lab guidelines for submission/grading, etc., which can be found in Files/Labs.
-
-
-> In this assignment you will implement RadixSort. See the textbook for the pseudocode. 
-
-## Input Structure
-
-> You are going to apply RadixSort to sort vectors. The input starts with an integer number which indicates the number of vectors to be sorted. Then vectors follow, one vector per line. Each vector consists of 10 numbers where each number has a value in $\{0, 1, 2, 3\}$. Entries of a vector are separated by a space.
-
-## Output Structure
-
-> Output the sorted sequence of vectors, one per line. Vector $i$ must appear before vector $j$ in your output if and only if for some $d \in \{1, 2, \dots, 10\}$, vector $i$ is smaller than or equal to vector $j$ of the $d$th entry, and the two vectors are equal for any of the first $d - 1$ entries.
-
-## Examples of input and output
-
-### Input
++ `s`(key): Search (key) in the table. If there is an element with the key value, then you have to output
 
 ```c++
-5
-3 3 3 3 3 2 2 2 2 2
-2 3 2 2 2 2 2 2 2 2
-1 3 0 0 2 1 0 0 0 0
-1 3 0 0 2 2 0 0 0 0
-2 3 2 1 2 2 2 2 2 2
+(key):FOUND_ATi,j;
 ```
 
-### Output
+Where $i$ is the hash table index and $j$ is the linked list index. If there are multiple elements with the same key value, choose the first one appearing in the linked list. If you couldn't find the key, then ouput
 
 ```c++
-1;3;0;0;2;1;0;0;0;0;
-1;3;0;0;2;2;0;0;0;0;
-2;3;2;1;2;2;2;2;2;2;
-2;3;2;2;2;2;2;2;2;2;
-3;3;3;3;3;2;2;2;2;2;
+(key):NOT_FOUND;
 ```
 
-> More precisely, this output example has `6` lines since a `cout << endl;` call was made at the end of each of the first 5 lines; those are the only white characters;.
++ `o`: Output the table. Output the entire hash table. Each line should begin with the slot/hash table index followed by the key values in the linked list. For example, if $m = 3$ and we inserted $3$, $6$, and $1$ into an empty table in this order, then you should output
+  
+```c++
+0:6->3->;
+1:1->;
+2:;
+```
 
-See the lab guidelines for submission/grading, etc., which can be found in Files/Labs.
++ `e`: finish your program
+
+## Example of input and output
+
+The following example shows an execution of the program in interactive mode. See the input files and output files under the `testfiles` folder for examples where input and output are separated.
+
+```c++
+2
+i4
+i2
+i6
+i3
+o
+0:6->2->4->;
+1:3->;
+s2
+2:FOUND_AT0,1;
+s4
+4:FOUND_AT0,2;
+d5
+5:DELETE_FAILED;
+d2
+2:DELETED;
+o
+0:6->4->;
+1:3->;
+e
+```
+
+See the lab guidelines for submission/grading, etc., which can be found at [The root of the Repo](https://github.com/adriandarian/CSE100/labs)

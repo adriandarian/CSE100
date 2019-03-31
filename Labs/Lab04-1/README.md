@@ -7,19 +7,19 @@
 
 ## Description
 
-> In this lab assignment (lab 04-1), your job is to implement heap-sort. This is the first half of lab 04 and is worth 50 points.
+In this lab assignment (lab 04-1), your job is to implement heap-sort. This is the first half of lab 04 and is worth 50 points.
 
 ## Input Structure
 
-> The input starts with an integer number which indicates the number of elements (integers) to be sorted, $n$. Then, the elements follow, one per line.
+The input starts with an integer number which indicates the number of elements (integers) to be sorted, $n$. Then, the elements follow, one per line.
 
 ## Output Structure
 
-> Output the elements in non-decreasing order. Each element must be followed by ;.
+Output the elements in non-decreasing order. Each element must be followed by ;.
 
 ## Examples of input and output
 
-### Input
+### _Input_
 
 ```c++
 6
@@ -31,10 +31,10 @@
 4
 ```
 
-### Output
+### _Output_
 
 `1;2;3;4;5;6;`
 
 > Note that the output has only one line and has no white characters.
 
-See the lab guidelines for submission/grading, etc., which can be found in Files/Labs.
+See the lab guidelines for submission/grading, etc., which can be found at [The root of the Repo](https://github.com/adriandarian/CSE100/Labs)
