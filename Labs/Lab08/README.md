@@ -7,7 +7,7 @@
 
 ## Description
 
-In this assignment you are asked to implement a dynamic programming algorithm: matrix chain multiplication (chapter 15.2), where the goal is to find the most computionally efficient matrix order when multiplying an arbitrary number of matrices in a row. You can assume that the entire input will be given as integers that can be stored using the standard C++ int type and that matrix sizes will be at least 1.
+In this assignment you are asked to implement a dynamic programming algorithm: matrix chain multiplication (chapter 15.2), where the goal is to find the most computationally efficient matrix order when multiplying an arbitrary number of matrices in a row. You can assume that the entire input will be given as integers that can be stored using the standard C++ int type and that matrix sizes will be at least 1.
 
 ## Input Structure
 
@@ -41,5 +41,4 @@ First, you need to output the minimum number of scalar multiplications needed to
 ((A0(A1A2))((A3A4)A5))
 ```
 
-
-See the lab guidelines for submission/grading, etc., which can be found at [The root of the Repo](https://github.com/adriandarian/CSE100/Labs)
+See the lab guidelines for submission/grading, etc., which can be found at [The root of the Repository](https://github.com/adriandarian/CSE100/Labs)
