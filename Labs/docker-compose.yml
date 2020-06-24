@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+    lab00:
+        container_name: Lab00
+        image: lab00:v0.1.0
+        build:
+            context: ./Lab00
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab00'
