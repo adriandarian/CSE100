@@ -9,3 +9,12 @@ services:
             dockerfile: Dockerfile
         labels:
             NAME: 'Lab00'
+
+    lab01:
+        container_name: Lab01
+        image: lab01:v0.1.0
+        build:
+            context: ./Lab01
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab01'
