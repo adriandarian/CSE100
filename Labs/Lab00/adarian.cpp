@@ -3,38 +3,35 @@
 #define MAX_INT 2147483647
 
 using namespace std;
-  
 
-int main(int argc,char **argv) {
-
-  int* Sequence;
-  int arraySize = 1;
+int main(int argc, char **argv)
+{
+  // Initialize scoped variables
+  auto amount = 1, max = 1, min = 0, tmp = 0, i = 0;
 
   // Get the size of the sequence
-  cin >> arraySize;
-  Sequence = new int[arraySize];
-    
-  // Read the sequence
-  for(int i = 0; i < arraySize; i++)
-    cin >> Sequence[i];
-   
-  // Initializing the max and min numbers
-  int max_num = Sequence[0];
-  int min_num = Sequence[0];
+  cin >> amount;
 
-  // Updating the max and min numbers
-  for (int i = 1; i < arraySize; i++) {
-    if (Sequence[i] > max_num)
-      max_num = Sequence[i];
-    if (Sequence[i] < min_num)
-      min_num = Sequence[i];
-  }
+  // Read the sequence
+  do
+  {
+    // Updating the max and min numbers
+    cin >> tmp;
+
+    if (i == 0)
+    {
+      max = tmp;
+      min = tmp;
+    }
+    else
+    {
+      max = tmp > max ? tmp : max;
+      min = tmp < min ? tmp : min;
+    }
+
+    i++;
+  } while (i < amount);
 
   // output
-  cout << max_num << ";" << min_num;
-
-
-  // Free allocated space
-  delete[] Sequence;
-
+  cout << max << ";" << min;
 }
