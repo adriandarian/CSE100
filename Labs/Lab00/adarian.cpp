@@ -18,6 +18,7 @@ int main(int argc, char **argv)
     // Updating the max and min numbers
     cin >> tmp;
 
+    // Run once to assign min and max to the first value inserted
     if (i == 0)
     {
       max = tmp;
@@ -25,6 +26,7 @@ int main(int argc, char **argv)
     }
     else
     {
+      // Ternary operators to check if min or max value should be updated
       max = tmp > max ? tmp : max;
       min = tmp < min ? tmp : min;
     }
