@@ -21,7 +21,7 @@ void mergeSort(int* seq, int l, int r) {
 
     // Merge two numbers backwards as a lambda function
     auto merge = [&]() {
-      auto i = 0, j = 0, k = 0, n1 = m - l + 1, n2 =  r - m;
+      auto i = 0, j = 0, k = l, n1 = m - l + 1, n2 =  r - m;
       int L[n1], R[n2]; 
 
       for (i; i < n1; i++) 
@@ -30,7 +30,7 @@ void mergeSort(int* seq, int l, int r) {
       for (j; j < n2; j++) 
         R[j] = seq[m + 1 + j]; 
       
-      i = 0, j = 0, k = l;
+      i = 0, j = 0;
 
       while (i < n1 && j < n2) { 
         if (L[i] <= R[j]) { 
