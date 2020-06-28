@@ -3,7 +3,6 @@ version: '3.7'
 services:
     lab00:
         container_name: Lab00
-        image: lab00:v0.1.0
         build:
             context: ./Lab00
             dockerfile: Dockerfile
@@ -12,9 +11,16 @@ services:
 
     lab01:
         container_name: Lab01
-        image: lab01:v0.1.0
         build:
             context: ./Lab01
             dockerfile: Dockerfile
         labels:
             NAME: 'Lab01'
+
+    lab02:
+        container_name: Lab02
+        build:
+            context: ./Lab02
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab02'
