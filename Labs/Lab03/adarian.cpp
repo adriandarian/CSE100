@@ -38,12 +38,7 @@ int maxSubarray(int *seq, int low, int high)
       return leftSum + rightSum;
     };
 
-    if (leftSum >= rightSum and leftSum >= crossSum())
-      return leftSum;
-    else if (rightSum >= leftSum and rightSum >= crossSum())
-      return rightSum;
-    else
-      return crossSum();
+    return (leftSum >= rightSum & leftSum >= crossSum()) ? leftSum : ((rightSum >= leftSum & rightSum >= crossSum()) ? rightSum : crossSum());
   }
 }
 
