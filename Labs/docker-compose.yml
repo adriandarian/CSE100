@@ -24,3 +24,83 @@ services:
             dockerfile: Dockerfile
         labels:
             NAME: 'Lab02'
+
+    lab03:
+        container_name: Lab03
+        build:
+            context: ./Lab03
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab03'
+
+    lab04-1:
+        container_name: Lab04-1
+        build:
+            context: ./Lab04-1
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab04-1'
+
+    lab04-2:
+        container_name: Lab04-2
+        build:
+            context: ./Lab04-2
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab04-2'
+
+    lab05:
+        container_name: Lab05
+        build:
+            context: ./Lab05
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab05'
+
+    lab06:
+        container_name: Lab06
+        build:
+            context: ./Lab06
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab06'
+
+    lab07:
+        container_name: Lab07
+        build:
+            context: ./Lab07
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab07'
+
+    lab08:
+        container_name: Lab08
+        build:
+            context: ./Lab08
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab08'
+
+    lab09:
+        container_name: Lab09
+        build:
+            context: ./Lab09
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab09'
+
+    lab10:
+        container_name: Lab10
+        build:
+            context: ./Lab10
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab10'
+
+    lab11:
+        container_name: Lab11
+        build:
+            context: ./Lab11
+            dockerfile: Dockerfile
+        labels:
+            NAME: 'Lab11'
