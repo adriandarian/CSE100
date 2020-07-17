@@ -17,4 +17,4 @@ RUN make clean
 RUN make all
 
 # Run against the Grade to check for accuracy and success
-CMD ["./Grade"]
+ENTRYPOINT ["bash", "Grade"]
