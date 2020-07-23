@@ -6,50 +6,63 @@
 
 using namespace std;
 
-void Insert(vector<list<int>> &hashtable, int k) {
-  int m = hashtable.size();
-  int val = k % m;
+void Insert(vector<list<int>> &hashtable, int k)
+{
+  auto m = hashtable.size();
+  auto val = k % m;
   hashtable[val].push_front(k);
 }
 
-void Search(vector<list<int>> &hashtable, int k) {
-  int m = hashtable.size();
-  int val = (k % m);
-  list<int>:: iterator iterate = find(hashtable[val].begin(), hashtable[val].end(), k);
-  
-  if (iterate == hashtable[val].end()) {
+void Search(vector<list<int>> &hashtable, int k)
+{
+  auto m = hashtable.size();
+  auto val = (k % m);
+  list<int>::iterator iterate = find(hashtable[val].begin(), hashtable[val].end(), k);
+
+  if (iterate == hashtable[val].end())
+  {
     cout << k << ":NOT_FOUND;" << endl;
-  } else {
+  }
+  else
+  {
     cout << k << ":FOUND_AT" << val << "," << distance(hashtable[val].begin(), iterate) << ";" << endl;
   }
 }
 
-void  Delete(vector<list<int>> &hashtable, int k) {
-  int m = hashtable.size();
-  int val = (k % m);
-  list<int>:: iterator iterate = find(hashtable[val].begin(), hashtable[val].end(), k);
-  
-  if (iterate == hashtable[val].end()) {
+void Delete(vector<list<int>> &hashtable, int k)
+{
+  auto m = hashtable.size();
+  auto val = (k % m);
+  list<int>::iterator iterate = find(hashtable[val].begin(), hashtable[val].end(), k);
+
+  if (iterate == hashtable[val].end())
+  {
     cout << k << ":DELETE_FAILED;" << endl;
-  } else {
+  }
+  else
+  {
     hashtable[val].erase(iterate);
     cout << k << ":DELETED;" << endl;
   }
 }
 
-void Print(vector<list<int>> &hashtable){
-  int hashSize = hashtable.size();
-  
-  for (int i = 0; i < hashSize; i++) {
+void Print(vector<list<int>> &hashtable)
+{
+  auto hashSize = hashtable.size();
+
+  for (auto i = 0; i < hashSize; i++)
+  {
     cout << i << ":";
-    for (list<int>::iterator iterate = hashtable[i].begin(); iterate != hashtable[i].end(); ++iterate) {
+    for (list<int>::iterator iterate = hashtable[i].begin(); iterate != hashtable[i].end(); ++iterate)
+    {
       cout << *iterate << "->";
     }
     cout << ";" << endl;
   }
 }
 
-int main() {
+int main()
+{
   int size = 0, val = 0;
   string input, function;
   vector<list<int>> hashtable;
@@ -58,25 +71,35 @@ int main() {
   cin >> input;
 
   hashtable.resize(size);
-  
-  while (input != "e") {
-    if (input != "o") {
+
+  while (input != "e")
+  {
+    if (input != "o")
+    {
       function = input.substr(0, 1);
       stringstream convert(input.substr(1, input.size() - 1));
-      if (!(convert >> val)) {
+      if (!(convert >> val))
+      {
         val = -1;
       }
 
-      if (function == "i") {
+      if (function == "i")
+      {
         Insert(hashtable, val);
-      } else if(function == "s") {
+      }
+      else if (function == "s")
+      {
         Search(hashtable, val);
-      } else if(function == "d") {
+      }
+      else if (function == "d")
+      {
         Delete(hashtable, val);
       }
-    } else if(input=="o") {
+    }
+    else if (input == "o")
+    {
       Print(hashtable);
     }
-    cin>>input;
+    cin >> input;
   }
 }
