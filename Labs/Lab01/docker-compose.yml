@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  cse_100_lab:
+    image: amytabb/docker_ubuntu16_essentials
+    container_name: cse_100_lab
+    # stdin_open: true # docker run -i
+    # tty: true # docker run -t
+    command: bash -c "make all && ./Grade"
+    working_dir: /app/
+    volumes:
+      - type: bind
+        source: .
+        target: /app/
+        consistency: consistent
